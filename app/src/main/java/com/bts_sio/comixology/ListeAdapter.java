@@ -14,18 +14,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.w3c.dom.Text;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListeAdapter extends ArrayAdapter<Equipe> {
 
     Context context;
 
-    public ListeAdapter(@NonNull Context context, List<Equipe> listeEquipe) {
+    public ListeAdapter(@NonNull Context context, ArrayList<Equipe> listeEquipe) {
         super(context, -1,listeEquipe);
         this.context = context;
     }

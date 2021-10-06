@@ -10,24 +10,23 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Equipe> listeEquipe;
 
+
+
     Equipe e1 = new Equipe(1,"avengers","Super héros marvel", "avengers/Avengers.jpg");
-    Equipe e2 = new Equipe(1,"jla","Super héros DC", "jla/jla.png");
-    Equipe e3 = new Equipe(1,"xmen","Super héros Mutants", "xmen/xmen.png");
-
-    ListView lvliste;
-
-    ArrayList<Membre> listeMembre;
-
-    Membre m1 = new Membre(1,"captain america","héros 2nd guerre mondiale", "avengers/capamerica.png");
-    Membre m2 = new Membre(1,"guepe","super guepe", "avengers/guepe.png");
-    Membre m3 = new Membre(1,"ironman","home de métal", "avengers/ironman.png");
+    Equipe e2 = new Equipe(2,"jla","Super héros DC", "jla/jla.png");
+    Equipe e3 = new Equipe(3,"xmen","Super héros Mutants", "xmen/xmen.png");
 
     ListView lvliste1;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,19 +38,18 @@ public class MainActivity extends AppCompatActivity {
         listeEquipe.add(e2);
         listeEquipe.add(e3);
 
-        listeMembre = new ArrayList<Membre>();
-        listeMembre.add(m1);
-        listeMembre.add(m2);
-        listeMembre.add(m3);
 
-        lvliste = (ListView) findViewById(R.id.lvliste1);
 
-        lvliste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvliste1 = (ListView) findViewById(R.id.lvliste1);
+
+
+        lvliste1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 startViewActivity(i);
             }
         });
+
 
     }
     private void startViewActivity(int i){
@@ -61,28 +59,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
 
-        // partie membre startViewActivity
-
-        Membre unMembre = listeMembre.get(1);
-        Intent intent1 = new Intent(this,MembreActivity.class);
-        intent1.putExtra("idM",unMembre.getIdM());
-        StartActivity(intent1);
-
     }
 
-    private void StartActivity(Intent intent1) {
-    }
+
 
     @Override
     protected void onResume() {
         super.onResume();
         ListeAdapter listeAdapter = new ListeAdapter(this, listeEquipe);
-        lvliste.setAdapter(listeAdapter);
+        lvliste1.setAdapter(listeAdapter);
 
-        //onResume membre
-        ListeAdapter listeAdapter1 = new ListeAdapter(this, listeMembre);
-        lvliste1.setAdapter(listeAdapter1);
     }
+
+
+
 
 
 

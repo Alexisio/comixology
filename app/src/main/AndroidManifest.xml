@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Comixology">
         <activity
+            android:name=".DescMembActivity"
+            android:exported="true" />
+        <activity
             android:name=".MembreActivity"
             android:exported="true" />
         <activity

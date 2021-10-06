@@ -27,7 +27,7 @@
         <TextView
             android:id="@+id/tvdesc"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="Description"
             android:textColor="@color/purple_700"></TextView>
